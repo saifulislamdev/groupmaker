@@ -1,0 +1,49 @@
+body {
+    font-family: 'Source Code Pro', sans-serif; 
+    text-align: center;
+    font-weight: lighter;
+}
+
+.title {
+    margin-top: 75px;
+    font-weight: 200;
+    font-size: 45px;
+}
+
+h2 {
+    margin-top: 5%;
+    margin-bottom: 0px; 
+    font-size: 25px;
+}
+
+h6 {
+    font-weight: lighter;
+    margin-top: 5px;
+}
+
+#input {
+    margin-bottom: 40px;
+}
+
+div {
+    cursor: pointer;
+    font-size: 15px;
+    border: 0.5px solid black;
+    width: 20%;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+div:hover {
+    color: white;
+    background-color: black;
+}
+
+.lastButton {
+    margin-bottom: 50px;
+}
+
+#output {
+    font-size: 15px;
+}
