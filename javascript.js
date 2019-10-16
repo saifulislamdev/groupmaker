@@ -5,7 +5,10 @@ function arrayMaker() {
     }
     else {
         inputString = inputString.toUpperCase();
+        inputString = removeExtraCommas(inputString); // removes extra commas from input
+        console.log(inputString);
         var inputArr = inputString.split(','); // creates input array from input string
+        console.log(inputArr);
         return inputArr;
     }
 }
@@ -178,7 +181,7 @@ function printArray(array, num) {
                 }
                 else if (typeof array[i][num - 3] == 'undefined') {
                     tempString = "<p>GROUP " + (i + 1) + ": " + array[i][num - 5] + " AND " + array[i][num - 4] + "</p>";
-                }   
+                }
                 else if (typeof array[i][num - 2] == 'undefined') {
                     tempString = "<p>GROUP " + (i + 1) + ": " + array[i][num - 5] + ", " + array[i][num - 4] + ", AND " + array[i][num - 3] + "</p>";
                 }
@@ -198,7 +201,7 @@ function printArray(array, num) {
                 }
                 else if (typeof array[i][num - 4] == 'undefined') {
                     tempString = "<p>GROUP " + (i + 1) + ": " + array[i][num - 6] + " AND " + array[i][num - 5] + "</p>";
-                }   
+                }
                 else if (typeof array[i][num - 3] == 'undefined') {
                     tempString = "<p>GROUP " + (i + 1) + ": " + array[i][num - 6] + ", " + array[i][num - 5] + ", AND " + array[i][num - 4] + "</p>";
                 }
@@ -208,7 +211,7 @@ function printArray(array, num) {
                 else if (typeof array[i][num - 1] == 'undefined') {
                     tempString = "<p>GROUP " + (i + 1) + ": " + array[i][num - 6] + ", " + array[i][num - 5] + ", " + array[i][num - 4] + ", " + array[i][num - 3] + ", AND " + array[i][num - 2] + "</p>";
                 }
-                else { 
+                else {
                     tempString = "<p>GROUP " + (i + 1) + ": " + array[i][num - 6] + ", " + array[i][num - 5] + ", " + array[i][num - 4] + ", " + array[i][num - 3] + ", " + array[i][num - 2] + ", AND " + array[i][num - 1] + "</p>";
                 }
                 string = string.concat(tempString);
@@ -234,6 +237,24 @@ function pushFinalArray(array, num) {
     else {
         return [array[0], array[1], array[2], array[3], array[4]];
     }
+}
+
+function removeExtraCommas(string) {
+    if (string[0] == ',') {
+        string = string.slice(1, string.length);
+    }
+    if (string[string.length - 1] == ',') {
+        string = string.slice(0, string.length - 1);
+    }
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] == ',' && string[i - 1] == ',') {
+            string = string.slice(0, i - 1) + string.slice(i, string.length);
+        }
+        // else if (array[i] == "") {
+        //     array = array.splice(i);
+        // }
+    }
+    return string;
 }
 
 function checkForEmptiness(array, num) {
