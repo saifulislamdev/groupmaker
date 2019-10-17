@@ -6,9 +6,7 @@ function arrayMaker() {
     else {
         inputString = inputString.toUpperCase();
         inputString = removeExtraCommas(inputString); // removes extra commas from input
-        console.log(inputString);
         var inputArr = inputString.split(','); // creates input array from input string
-        console.log(inputArr);
         return inputArr;
     }
 }
@@ -17,7 +15,7 @@ function groupMaker(num) {
     var array = arrayMaker(); // input array
     var endOfArray = array.length;
     var options = array.length;
-    var groupArray = []; // random group will be in this array
+    var groupArray = []; // random group will be stored in this array
     var firstIndex, secondIndex, thirdIndex, fourthIndex, fifthIndex, sixthIndex, temp;
     if (checkForEmptiness(array, num)) { // checks for less than required number of entries
         for (var i = 0; i < endOfArray / num; i++) {
@@ -117,13 +115,13 @@ function groupMaker(num) {
                 groupArray.push([firstIndex, secondIndex, thirdIndex, fourthIndex, fifthIndex, sixthIndex]);
             }
         }
-        if ((array.length) % num != 0) { // pushes final contents of whatever is remaining in the input array
+        if ((array.length) % num != 0) { // pushes final contents of whatever is remaining in the input array if pairs of groups and number of names are not mod 0
             groupArray.push(pushFinalArray(array, num));
         }
         document.getElementById("output").innerHTML = printArray(groupArray, num); // prints random groups
     }
     else {
-        document.getElementById("output").innerHTML = "ENTER AT LEAST " + num + " NAMES AND TRY AGAIN.";
+        document.getElementById("output").innerHTML = "ENTER AT LEAST " + num + " NAMES AND TRY AGAIN."; // if pairs of groups < number of names entered
     }
 }
 
@@ -240,19 +238,19 @@ function pushFinalArray(array, num) {
 }
 
 function removeExtraCommas(string) {
-    if (string[0] == ',') {
+    while (string[0] == ',' || string[0] == " ") { // remove comma or space at beginning (if any)
         string = string.slice(1, string.length);
     }
-    if (string[string.length - 1] == ',') {
+    while (string[string.length - 1] == ',' || string[0] == " ") { // remove comma or space at end (if any)
         string = string.slice(0, string.length - 1);
     }
     for (var i = 0; i < string.length; i++) {
-        if (string[i] == ',' && string[i - 1] == ',') {
-            string = string.slice(0, i - 1) + string.slice(i, string.length);
+        while (string[i] == " " && string[i - 1] == " ") { // remove extra spaces
+            string = string.slice(0, i) + string.slice(i + 1, string.length);
         }
-        // else if (array[i] == "") {
-        //     array = array.splice(i);
-        // }
+        while (string[i] == ',' && string[i - 1] == ',') { // remove consecutive commas
+            string = string.slice(0, i) + string.slice(i + 1, string.length);
+        }
     }
     return string;
 }
@@ -269,5 +267,3 @@ function checkForEmptiness(array, num) {
 function randomNum(num) {
     return Math.floor(Math.random() * Math.floor(num));
 }
-
-
