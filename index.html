@@ -7,7 +7,7 @@
     <title>GroupMaker</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='javascript.js'></script>
+    <script src='script.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 </head>
@@ -22,6 +22,11 @@
     <div onclick="groupMaker(4)">GROUPS OF 4</div>
     <div onclick="groupMaker(5)">GROUPS OF 5</div>
     <div class="lastButton" onclick="groupMaker(6)">GROUPS OF 6</div>
+    <h3 class="moreOption">NEED MORE NAMES PER GROUP?</h3>
+    <div onclick="moreOption()">
+        <a>GROUPS OF </a>
+        <input id="groupsOf" type="text" size="2"/> 
+    </div>
     <p id="output"></p>
 </body>
 

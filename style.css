@@ -1,18 +1,18 @@
 body {
-    font-family: 'Source Code Pro', sans-serif; 
+    font-family: 'Source Code Pro', sans-serif;
     text-align: center;
     font-weight: lighter;
 }
 
 .title {
-    margin-top: 75px;
+    margin-top: 50px;
     font-weight: 200;
     font-size: 45px;
 }
 
 h2 {
     margin-top: 5%;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     font-size: 25px;
 }
 
@@ -42,6 +42,10 @@ div:hover {
 
 .lastButton {
     margin-bottom: 50px;
+}
+
+.moreOption {
+    font-size: 17.5px;
 }
 
 #output {
