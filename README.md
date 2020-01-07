@@ -3,7 +3,7 @@
 Personal Project
 
 Project could be upgraded by:
-* Creating groups of more than 6 
+* ~~Creating groups of more than 6~~ 
 * ~~Make code more efficient~~
 
 Potential errors that need to be fixed:
