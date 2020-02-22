@@ -1,5 +1,5 @@
 function groupMaker(num) {
-    var array = arrayMaker(); // input array created from user input that will be converted into random groups
+    var array = arrayMaker(); // input array created from user input
     var groupArray = []; // collection of random groups will be stored in this array
     var tempRandGroup = []; // current random group to be inserted into groupArray (temporary group placeholder)
     var randIndex, insertInTemp;
@@ -21,13 +21,13 @@ function groupMaker(num) {
         if ((array.length) % num != 0) { // push final random group if number of names from user input and number of names in each group are not divisible (names are leftover)
             groupArray.push(pushFinalArray(array, num));
         }
-        document.getElementById("output").innerHTML = printArray(groupArray, num); // prints random groups
+        printGroups(groupArray, num); // prints random groups
     } else { // if number of names entered < pairs of groups (i.e. if there is only 2 names entered by user for groups of 3)
         document.getElementById("output").innerHTML = "ENTER AT LEAST " + num + " NAMES AND TRY AGAIN.";
     }
 }
 
-function printArray(array) {
+function printGroups(array) {
     var string = "";
     var tempString = "";
     for (var i = 0; i < array.length; i++) { // print groups one at a time
@@ -49,7 +49,7 @@ function printArray(array) {
         string = string.concat(tempString); // add current group to output
         tempString = ""; // reset temporary string placeholder to add next group
     }
-    return string;
+    document.getElementById("output").innerHTML = string;
 }
 
 function arrayMaker() {

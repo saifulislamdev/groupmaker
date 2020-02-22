@@ -1,19 +1,23 @@
+/* Organization: 
+ * Outside of brace: in order of what is seen on the page from top to bottom
+ * Inside of brace: alphabetical order */
+
 body {
     font-family: 'Source Code Pro', sans-serif;
-    text-align: center;
     font-weight: lighter;
+    text-align: center;
 }
 
 .title {
-    margin-top: 50px;
-    font-weight: 200;
     font-size: 45px;
+    font-weight: 200;
+    margin-top: 20px;
 }
 
 h2 {
-    margin-top: 5%;
-    margin-bottom: 0px;
     font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 3%;
 }
 
 h6 {
@@ -22,26 +26,26 @@ h6 {
 }
 
 #input {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 div {
+    border: 0.5px solid black;
     cursor: pointer;
     font-size: 15px;
-    border: 0.5px solid black;
-    width: 20%;
-    padding: 5px;
-    margin-top: 20px;
     margin-left: 40%;
+    margin-top: 20px;
+    padding: 5px;
+    width: 20%;
 }
 
 div:hover {
-    color: white;
     background-color: black;
+    color: white;
 }
 
 .lastButton {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .moreOption {
@@ -50,4 +54,5 @@ div:hover {
 
 #output {
     font-size: 15px;
+    margin-top: 40px;
 }
