@@ -1,5 +1,5 @@
-# GroupMaker
-Live at: https://saifulislamdev.github.io/GroupMaker/
+# Group Maker
+Live at: https://saifulislamdev.github.io/groupmaker/
 
 Personal Project
 
